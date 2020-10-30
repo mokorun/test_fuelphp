@@ -2,6 +2,13 @@ version: "3"
 
 services:
 
+  db:
+    image: mysql:latest
+    volumes:
+      - ./db/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+
   web-server:
     container_name: nginx
     image: nginx:latest
